@@ -4,11 +4,37 @@ Creiamo un array contenente le partite di basket di un’ipotetica tappa del cal
 Olimpia Milano - Cantù | 55-60*/
 
 $matchs = [
-    "Olimpia Milano - Cantù | 55-60",
-    "Juventus - Maccabi Haifa | 120-55",
-    "Inter Milano - Brescia | 25-96",
-    "Cosenza - Catanzaro | 120-15",
-    "Palermo - Messina | 55-69"
+    [
+        'hometeam' => 'Olimpia Milano',
+        'guestteam' => 'Cantù',
+        'homescore' => 55,
+        'guestscore' => 60
+    ],
+    [
+        'hometeam' => 'Juventus',
+        'guestteam' => 'Maccabi Haifa',
+        'homescore' => 120,
+        'guestscore' => 55
+    ],
+    [
+        'hometeam' => 'Inter Milano',
+        'guestteam' => 'Brescia',
+        'homescore' => 25,
+        'guestscore' => 96
+    ],
+    [
+        'hometeam' => 'Cosenza',
+        'guestteam' => 'Catanzaro',
+        'homescore' => 120,
+        'guestscore' => 15
+    ],
+    [
+        'hometeam' => 'Palermo',
+        'guestteam' => 'Messina',
+        'homescore' => 55,
+        'guestscore' => 69
+    ]
+
 ];
 
 ?>
@@ -24,10 +50,11 @@ $matchs = [
 </head>
 
 <body>
-    <h1><?= 'Last match played:' ?></h1>
-    <?php foreach ($matchs as $match) { ?>
-        <p><?= $match ?></p>
-    <?php } ?>
+    <ul>
+        <?php foreach ($matchs as $match) : ?>
+            <li><?= $match['hometeam'] . ' - ' . $match['guestteam'] . ' | ' . $match['homescore'] . ' - ' . $match['guestscore'] ?></li>
+        <?php endforeach ?>
+    </ul>
 </body>
 
 </html>
